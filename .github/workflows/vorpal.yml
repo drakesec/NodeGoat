@@ -20,7 +20,7 @@ jobs:
           source_path: "app/routes/contributions.js"
           filter_mode: file
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-check
+          reporter: github-pr-review
           level: error
           # fail_on_error: false
           fail_on_error: true
