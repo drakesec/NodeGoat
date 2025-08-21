@@ -30,8 +30,5 @@ jobs:
         with:
           sarif_file: kics/results.sarif
 
-      - name: ensure jq installed
-        run: apt-get install -y jq
-
       - name: display kics results
         run: cat kics/results.json | jq
