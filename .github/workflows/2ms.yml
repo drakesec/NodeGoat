@@ -17,4 +17,4 @@ jobs:
           fetch-depth: 0
 
       - name: Run 2ms Scan
-        run: docker run -v $(pwd):/repo checkmarx/2ms:4.1.3 git /repo
+        run: docker run -v $(pwd):/repo checkmarx/2ms:4.1.3 git /repo --config /repo/2ms.yml
