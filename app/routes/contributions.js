@@ -26,13 +26,11 @@ function ContributionsHandler(db) {
     };
 
     this.handleContributionsUpdate = (req, res, next) => {
-        // Vorpal: find me
         /*jslint evil: true */
         // Insecure use of eval() to parse inputs
         const preTax = eval(req.body.preTax);
         const afterTax = eval(req.body.afterTax);
         const roth = eval(req.body.roth);
-        const beacon = "VORPAL COME FIND ME";
 
         /*
         //Fix for A1 -1 SSJS Injection attacks - uses alternate method to eval

@@ -20,10 +20,8 @@ jobs:
         uses: checkmarx/vorpal-reviewdog-github-action@v1.0.0
         with:
           source_path: "${{ steps.changed-files.outputs.all_changed_files }}"
-          # source_path: "app/routes/contributions.js"
           filter_mode: file
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           level: error
-          # fail_on_error: false
           fail_on_error: true
