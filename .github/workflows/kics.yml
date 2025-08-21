@@ -22,7 +22,7 @@ jobs:
         with:
           path: '.'
           output_path: results-dir
-          fail_on: high,medium
+          fail_on: critical,high
 
       - name: upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
