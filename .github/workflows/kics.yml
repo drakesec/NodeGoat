@@ -1,0 +1,29 @@
+# https://github.com/Checkmarx/kics/blob/master/docs/integrations_ghactions.md
+name: KICS scan 
+
+on:
+  pull_request:
+    workflow_dispatch:
+    push:
+      branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: make results-dir
+        run: mkdir -p results-dir
+
+      - name: KICS Github Action
+        uses: Checkmarx/kics-github-action@v1.7.0
+        with:
+          path: '.'
+          output_path: results-dir
+
+      - name: upload SARIF file
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results-dir/results.sarif
