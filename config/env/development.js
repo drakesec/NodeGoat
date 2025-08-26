@@ -11,5 +11,5 @@ module.exports = {
       `<script>document.write("<script src='http://" + (location.host || "localhost").split(":")[0] + ":35729/livereload.js'></" + "script>");</script>`
       // jshint +W101
    ],
-  //DEMO:2MS:OPEN_AI_SECRET
+  someApiKey: "1doo5nt182ccp1saqplab0nd9v",
 };
