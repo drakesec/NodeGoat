@@ -1,6 +1,7 @@
 // making a change here to trigger a vorpal scan
 const UserDAO = require("../data/user-dao").UserDAO;
 const AllocationsDAO = require("../data/allocations-dao").AllocationsDAO;
+const sanitizeHtml = require('sanitize-html');
 const {
     environmentalScripts
 } = require("../../config/config");
@@ -52,10 +53,9 @@ function SessionHandler(db) {
     };
 
     this.handleLoginRequest = (req, res, next) => {
-        const {
-            userName,
-            password
-        } = req.body;
+        const userName = sanitizeHtml(req.body.userName);
+        const password = sanitizeHtml(req.body.password);
+
         userDAO.validateLogin(userName, password, (err, user) => {
             const errorMessage = "Invalid username and/or password";
             const invalidUserNameErrorMessage = "Invalid username";
