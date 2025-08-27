@@ -1,3 +1,4 @@
+// making a change here to trigger a vorpal scan
 const UserDAO = require("../data/user-dao").UserDAO;
 const AllocationsDAO = require("../data/allocations-dao").AllocationsDAO;
 const {
