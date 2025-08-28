@@ -44,10 +44,10 @@ function ContributionsHandler(db) {
                 environmentalScripts
             });
         }
-        // Prevent more than 30% contributions
-        if (preTax + afterTax + roth > 30) {
+        // Prevent more than 35% contributions
+        if (preTax + afterTax + roth > 35) {
             return res.render("contributions", {
-                updateError: "Contribution percentages cannot exceed 30 %",
+                updateError: "Contribution percentages cannot exceed 35 %",
                 userId,
                 environmentalScripts
             });
