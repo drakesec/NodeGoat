@@ -3,6 +3,7 @@ version: "3.7"
 services:
   web:
     security_opt:
+      - no-new-privileges:true
       - label=user:node
       - label=role:app
     build: .
